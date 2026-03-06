@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>London Rotation Alumni · Hult Boston</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --navy: #0D1B2A;
+      --navy-mid: #1A2E45;
+      --red: #C41E3A;
+      --red-light: #E8354F;
+      --fog: #F0F2F5;
+      --cream: #F8F7F4;
+      --text: #1E2D3D;
+      --muted: #4A5568;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--text); overflow-x: hidden; }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      background: var(--navy);
+      position: relative;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      padding: 80px 24px 60px;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse 70% 50% at 50% 110%, rgba(196,30,58,0.15) 0%, transparent 65%),
+        radial-gradient(ellipse 50% 40% at 85% 15%, rgba(196,30,58,0.07) 0%, transparent 60%);
+    }
+
+    /* London skyline SVG silhouette */
+    .skyline { position: absolute; bottom: 0; left: 0; width: 100%; opacity: 0.1; }
+
+    /* Rain effect */
+    .rain-container { position: absolute; inset: 0; overflow: hidden; pointer-events: none; }
+    .rain-drop {
+      position: absolute; top: -20px;
+      width: 1px; background: rgba(255,255,255,0.12);
+      animation: rainFall linear infinite;
+    }
+
+    @keyframes rainFall {
+      to { transform: translateY(110vh); }
+    }
+
+    .hero-eyebrow {
+      font-size: 11px; font-weight: 500; letter-spacing: 4px; text-transform: uppercase;
+      color: var(--red-light); margin-bottom: 28px;
+      opacity: 0; animation: fadeUp 0.8s 0.2s forwards;
+    }
+    .hero h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.8rem, 7vw, 5.8rem); font-weight: 700;
+      color: #fff; text-align: center; line-height: 1.05; max-width: 860px;
+      opacity: 0; animation: fadeUp 0.8s 0.4s forwards;
+    }
+    .hero h1 em { font-style: italic; color: #A8C8E8; }
+    .hero-sub {
+      margin-top: 28px; font-size: 1.05rem; font-weight: 300;
+      color: rgba(255,255,255,0.6); text-align: center; max-width: 520px; line-height: 1.75;
+      opacity: 0; animation: fadeUp 0.8s 0.6s forwards;
+    }
+    .hero-cta {
+      margin-top: 48px; display: inline-block; padding: 16px 44px;
+      background: var(--red); color: #fff;
+      font-size: 0.88rem; font-weight: 500; letter-spacing: 2px; text-transform: uppercase;
+      text-decoration: none; border-radius: 2px;
+      transition: background 0.25s, transform 0.2s;
+      opacity: 0; animation: fadeUp 0.8s 0.8s forwards;
+    }
+    .hero-cta:hover { background: var(--red-light); transform: translateY(-2px); }
+
+    .scroll-hint {
+      position: absolute; bottom: 32px; left: 50%; transform: translateX(-50%);
+      display: flex; flex-direction: column; align-items: center; gap: 8px;
+      opacity: 0; animation: fadeUp 1s 1.2s forwards;
+    }
+    .scroll-hint span { font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: rgba(255,255,255,0.25); }
+    .scroll-arrow {
+      width: 1px; height: 40px;
+      background: linear-gradient(to bottom, rgba(196,30,58,0.7), transparent);
+      animation: scrollPulse 1.8s ease-in-out infinite;
+    }
+
+    /* ── GRATITUDE SECTION ── */
+    .gratitude-section {
+      background: var(--cream);
+      padding: 110px 24px 90px;
+      position: relative; overflow: hidden;
+    }
+    .gratitude-section::before {
+      content: '';
+      position: absolute; top: -60px; right: -60px;
+      width: 380px; height: 380px;
+      background: radial-gradient(circle, rgba(196,30,58,0.05) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .gratitude-inner { max-width: 1000px; margin: 0 auto; }
+    .gratitude-text-block { max-width: 640px; margin-bottom: 80px; }
+
+    .section-label {
+      font-size: 10px; letter-spacing: 4px; text-transform: uppercase;
+      color: var(--red); font-weight: 500; margin-bottom: 20px;
+    }
+    .gratitude-text-block h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 4.5vw, 3.3rem); font-weight: 700;
+      color: var(--navy); line-height: 1.12; margin-bottom: 28px;
+    }
+    .gratitude-text-block h2 em { font-style: italic; color: var(--red); }
+    .gratitude-divider { width: 60px; height: 2px; background: var(--red); margin: 28px 0; opacity: 0.5; }
+    .gratitude-text-block p { font-size: 1.08rem; line-height: 1.9; color: var(--muted); margin-bottom: 18px; }
+
+    /* ── POLAROID COLLAGE ── */
+    .polaroid-collage {
+      position: relative; width: 100%; height: 500px;
+    }
+    .polaroid {
+      position: absolute;
+      background: #fff;
+      padding: 12px 12px 44px 12px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.13), 0 2px 8px rgba(0,0,0,0.07);
+      transition: transform 0.35s cubic-bezier(.2,.8,.3,1), box-shadow 0.35s ease;
+      cursor: pointer;
+    }
+    .polaroid:hover {
+      transform: scale(1.07) rotate(0deg) !important;
+      box-shadow: 0 24px 64px rgba(0,0,0,0.2);
+      z-index: 20 !important;
+    }
+    .polaroid img {
+      width: 100%; height: 195px; object-fit: cover; display: block;
+      filter: sepia(10%) contrast(1.05) brightness(1.0);
+    }
+    .polaroid-caption {
+      font-family: 'Cormorant Garamond', serif; font-style: italic;
+      font-size: 0.85rem; color: #999; text-align: center; margin-top: 10px; line-height: 1.4;
+    }
+    /* washi tape — red for London */
+    .polaroid::after {
+      content: '';
+      position: absolute; top: -11px; left: 50%;
+      transform: translateX(-50%) rotate(-1.5deg);
+      width: 50px; height: 20px;
+      background: rgba(196,30,58,0.3);
+      border-radius: 3px;
+    }
+    .p1 { width: 215px; top: 30px;  left: 0%;   transform: rotate(-4.5deg); z-index: 2; }
+    .p2 { width: 235px; top: 5px;   left: 19%;  transform: rotate(2deg);    z-index: 3; }
+    .p3 { width: 210px; top: 60px;  left: 38%;  transform: rotate(-2.5deg); z-index: 2; }
+    .p4 { width: 230px; top: 10px;  left: 56%;  transform: rotate(3.5deg);  z-index: 4; }
+    .p5 { width: 218px; top: 50px;  left: 75%;  transform: rotate(-3deg);   z-index: 2; }
+
+    @media (max-width: 780px) {
+      .polaroid-collage { height: auto; display: flex; flex-wrap: wrap; gap: 18px; justify-content: center; }
+      .polaroid { position: static !important; transform: none !important; width: 155px !important; }
+      .polaroid img { height: 130px; }
+    }
+
+    /* ── WHY SECTION ── */
+    .section { padding: 100px 24px; max-width: 960px; margin: 0 auto; }
+    .section h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.9rem, 4vw, 3.1rem); font-weight: 700;
+      color: var(--navy); line-height: 1.2; max-width: 600px;
+    }
+    .section h2 em { font-style: italic; color: var(--red); }
+    .divider { width: 60px; height: 2px; background: var(--red); margin: 32px 0; opacity: 0.5; }
+    .body-text { font-size: 1.05rem; line-height: 1.85; color: var(--muted); max-width: 640px; }
+
+    /* ── CARDS ── */
+    .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px; margin-top: 56px; }
+    .card {
+      background: #fff; border: 1px solid rgba(13,27,42,0.1);
+      border-radius: 4px; padding: 36px 28px;
+      transition: box-shadow 0.25s, transform 0.25s;
+      position: relative; overflow: hidden;
+    }
+    .card::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+      background: linear-gradient(90deg, var(--red), var(--red-light));
+      transform: scaleX(0); transform-origin: left; transition: transform 0.3s;
+    }
+    .card:hover { box-shadow: 0 12px 40px rgba(0,0,0,0.09); transform: translateY(-4px); }
+    .card:hover::before { transform: scaleX(1); }
+    .card-icon { font-size: 2rem; margin-bottom: 16px; }
+    .card h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 700; color: var(--navy); margin-bottom: 12px; }
+    .card p { font-size: 0.92rem; line-height: 1.7; color: var(--muted); }
+
+    /* ── FORM SECTION ── */
+    .form-section { background: var(--navy); padding: 100px 24px; position: relative; overflow: hidden; }
+    .form-section::before {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(ellipse 60% 60% at 50% 0%, rgba(196,30,58,0.1) 0%, transparent 70%);
+    }
+    .form-inner { max-width: 960px; margin: 0 auto; position: relative; z-index: 1; }
+    .form-header { margin-bottom: 56px; }
+    .form-header .section-label { color: var(--red-light); }
+    .form-header h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.9rem, 4vw, 3.1rem); font-weight: 700;
+      color: #fff; line-height: 1.2; max-width: 600px; margin-bottom: 16px;
+    }
+    .form-header p { font-size: 1rem; color: rgba(255,255,255,0.5); max-width: 540px; line-height: 1.7; }
+
+    .notion-embed-wrapper {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(196,30,58,0.25);
+      border-radius: 8px; overflow: hidden; min-height: 900px;
+    }
+    .notion-embed-wrapper iframe { width: 100%; min-height: 900px; border: none; display: block; }
+
+    /* ── FOOTER ── */
+    footer { background: #080F18; padding: 40px 24px; text-align: center; }
+    footer p { color: rgba(255,255,255,0.25); font-size: 0.82rem; letter-spacing: 1px; }
+    footer strong { color: var(--red-light); font-weight: 500; }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes scrollPulse {
+      0%, 100% { opacity: 0.4; } 50% { opacity: 1; }
+    }
+    .fade-in { opacity: 0; transform: translateY(28px); transition: opacity 0.75s ease, transform 0.75s ease; }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
+    .fade-in.delay-1 { transition-delay: 0.15s; }
+    .fade-in.delay-2 { transition-delay: 0.3s; }
+    .fade-in.delay-3 { transition-delay: 0.45s; }
+
+    @media (max-width: 600px) {
+      .cards { grid-template-columns: 1fr; }
+      .section, .gratitude-section { padding: 72px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ══════════════ HERO ══════════════ -->
+<section class="hero">
+
+  <!-- Subtle rain effect -->
+  <div class="rain-container" id="rain"></div>
+
+  <!-- London skyline silhouette -->
+  <svg class="skyline" viewBox="0 0 1440 220" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+    <path fill="white" d="
+      M0,220 L0,170 L30,170 L30,150 L50,150 L50,140 L70,140 L70,160 L90,160 L90,130
+      L95,100 L98,80 L100,60 L102,80 L105,100 L110,130 L110,160 L130,160 L130,140
+      L150,140 L150,120 L155,110 L160,100 L165,110 L170,120 L170,140 L200,140
+      L200,120 L210,110 L215,95 L218,85 L221,95 L226,110 L230,120 L230,140
+      L260,140 L260,155 L280,155 L280,135 L295,135 L295,115 L305,115 L305,100
+      L308,90 L311,100 L311,115 L325,115 L325,135 L355,135 L355,150
+      L380,150 L380,130 L390,120 L395,105 L398,95 L401,105 L406,120 L410,130
+      L410,150 L440,150 L440,165 L460,165 L460,145 L475,145 L475,120
+      L480,105 L485,95 L490,85 L495,95 L500,105 L505,120 L505,145 L520,145
+      L520,165 L550,165 L550,145 L565,145 L565,130 L575,120 L580,110 L585,120
+      L590,130 L590,145 L620,145 L620,160 L640,160 L640,140 L655,140 L655,115
+      L660,100 L665,88 L668,78 L671,88 L676,100 L680,115 L680,140 L700,140
+      L700,155 L720,155 L720,135 L735,135 L735,110 L740,95 L745,80 L750,95
+      L755,110 L755,135 L775,135 L775,150 L800,150 L800,130 L815,130 L815,108
+      L820,95 L825,83 L828,73 L831,83 L836,95 L840,108 L840,130 L860,130
+      L860,145 L890,145 L890,125 L905,125 L905,105 L910,92 L915,80 L920,92
+      L925,105 L925,125 L950,125 L950,140 L975,140 L975,120 L990,120 L990,105
+      L1000,95 L1010,85 L1015,75 L1020,85 L1025,95 L1030,105 L1030,120
+      L1055,120 L1055,135 L1080,135 L1080,115 L1095,115 L1095,100 L1105,90
+      L1115,80 L1120,70 L1125,80 L1130,90 L1135,100 L1135,115 L1155,115
+      L1155,130 L1180,130 L1180,145 L1200,145 L1200,125 L1215,125 L1215,105
+      L1225,95 L1235,80 L1240,68 L1245,80 L1250,95 L1255,105 L1255,125
+      L1280,125 L1280,140 L1310,140 L1310,155 L1340,155 L1340,135 L1355,135
+      L1355,115 L1365,105 L1375,95 L1380,115 L1385,135 L1410,135 L1410,155
+      L1440,155 L1440,220 Z
+    "/>
+  </svg>
+
+  <p class="hero-eyebrow">Hult Boston · London Rotation Alumni</p>
+  <h1>You lived London.<br/><em>Now help others find it.</em></h1>
+  <p class="hero-sub">The grey skies, the electric energy, the history on every corner — you got to experience all of it. Now share it, and inspire the next wave of students heading to the UK.</p>
+  <a href="#form" class="hero-cta">Share Your Story</a>
+
+  <div class="scroll-hint">
+    <span>Scroll</span>
+    <div class="scroll-arrow"></div>
+  </div>
+</section>
+
+<!-- ══════════════ GRATITUDE + POLAROID SECTION ══════════════ -->
+<section class="gratitude-section">
+  <div class="gratitude-inner">
+
+    <div class="gratitude-text-block fade-in">
+      <p class="section-label">A note of gratitude</p>
+      <h2>Thank you for choosing<br/><em>the city that never stops.</em></h2>
+      <div class="gratitude-divider"></div>
+      <p>
+        London doesn't ease you in. It throws you straight into the deep end — the Tube at rush hour, the accents, the history literally built into the walls around you, and a social scene that somehow manages to be both chaotic and effortlessly cool. And you chose all of it.
+      </p>
+      <p>
+        That took a certain kind of curiosity. The museums you wandered into on a Tuesday, the markets you found by accident, the friends you made from every corner of the world — those moments are yours to keep forever.
+      </p>
+      <p>
+        Now, the next generation is deciding where to go. They just need someone who's been there to tell them: <strong>London will surprise you in the best way possible.</strong>
+      </p>
+    </div>
+
+    <!-- POLAROID COLLAGE -->
+    <div class="polaroid-collage fade-in delay-1">
+
+      <div class="polaroid p1">
+        <img
+          src="https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=400&q=80"
+          alt="London Thames skyline"
+          onerror="this.style.background='#2D4A6B';this.style.height='195px'"
+        />
+        <p class="polaroid-caption">The Thames at golden<br/>hour never gets old</p>
+      </div>
+
+      <div class="polaroid p2">
+        <img
+          src="https://images.unsplash.com/photo-1486299267070-83823f5448dd?w=400&q=80"
+          alt="London street"
+          onerror="this.style.background='#3D2020';this.style.height='195px'"
+        />
+        <p class="polaroid-caption">Every street has<br/>a hundred years of story</p>
+      </div>
+
+      <div class="polaroid p3">
+        <img
+          src="https://images.unsplash.com/photo-1534430480872-3498386e7856?w=400&q=80"
+          alt="Notting Hill"
+          onerror="this.style.background='#4A3560';this.style.height='195px'"
+        />
+        <p class="polaroid-caption">Notting Hill on<br/>a Sunday morning</p>
+      </div>
+
+      <div class="polaroid p4">
+        <img
+          src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&q=80"
+          alt="Borough Market"
+          onerror="this.style.background='#1A3A2A';this.style.height='195px'"
+        />
+        <p class="polaroid-caption">Borough Market —<br/>your Saturday ritual</p>
+      </div>
+
+      <div class="polaroid p5">
+        <img
+          src="https://images.unsplash.com/photo-1543832923-44667a44c804?w=400&q=80"
+          alt="London fog evening"
+          onerror="this.style.background='#2A2A3A';this.style.height='195px'"
+        />
+        <p class="polaroid-caption">Even the fog had<br/>its own kind of magic</p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════════ WHY SECTION ══════════════ -->
+<section class="section">
+  <p class="section-label">Why It Matters</p>
+  <h2 class="fade-in">Your words can shape someone's <em>entire semester</em>.</h2>
+  <div class="divider"></div>
+  <p class="body-text fade-in">
+    Future Hult students are making one of the biggest decisions of their academic lives — choosing a rotation city. Your authentic voice, your personal story, your London memories carry more weight than any brochure ever could. This takes just a few minutes, but the impact lasts a lifetime.
+  </p>
+
+  <div class="cards">
+    <div class="card fade-in">
+      <div class="card-icon">🎙️</div>
+      <h3>Send a Voice Note</h3>
+      <p>Record a quick audio message about your London experience. Raw and real — just like your time there.</p>
+    </div>
+    <div class="card fade-in delay-1">
+      <div class="card-icon">🎬</div>
+      <h3>Share a Video Clip</h3>
+      <p>A 30-second video from your camera roll or a quick recording. Show them what London actually looks like.</p>
+    </div>
+    <div class="card fade-in delay-2">
+      <div class="card-icon">✍️</div>
+      <h3>Write a Message</h3>
+      <p>A few sentences. A personal tip. Your biggest takeaway. Written words have power too.</p>
+    </div>
+    <div class="card fade-in delay-3">
+      <div class="card-icon">📸</div>
+      <h3>Drop Your Content</h3>
+      <p>Photos, documents, anything that captures your London story. Upload it directly in the form below.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ FORM SECTION ══════════════ -->
+<section class="form-section" id="form">
+  <div class="form-inner">
+    <div class="form-header fade-in">
+      <p class="section-label">Sign Up · 2 Minutes</p>
+      <h2>Ready to inspire the next generation?</h2>
+      <p>Fill in the form below and Student Life will reach out to coordinate. Every contribution — big or small — counts.</p>
+    </div>
+
+    <div class="notion-embed-wrapper">
+      <iframe src="https://various-phone-39d.notion.site/ebd//31ba627ed90681299c92f94e0b52b553" width="100%" height="900" frameborder="0" allowfullscreen></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ FOOTER ══════════════ -->
+<footer>
+  <p>Made with ❤️ by the Hult Boston team &nbsp;·&nbsp; <strong>Questions? Reach out to Student Life.</strong></p>
+</footer>
+
+<script>
+  // Rain effect
+  const rain = document.getElementById('rain');
+  for (let i = 0; i < 60; i++) {
+    const drop = document.createElement('div');
+    drop.className = 'rain-drop';
+    drop.style.left = Math.random() * 100 + '%';
+    drop.style.height = (Math.random() * 20 + 10) + 'px';
+    drop.style.animationDuration = (Math.random() * 1.5 + 0.8) + 's';
+    drop.style.animationDelay = (Math.random() * 2) + 's';
+    rain.appendChild(drop);
+  }
+
+  // Smooth scroll
+  document.querySelector('.hero-cta').addEventListener('click', function(e) {
+    e.preventDefault();
+    document.getElementById('form').scrollIntoView({ behavior: 'smooth' });
+  });
+
+  // Fade-in on scroll
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) entry.target.classList.add('visible');
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>

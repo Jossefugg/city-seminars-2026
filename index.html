@@ -333,7 +333,7 @@ footer a { color:var(--gold); text-decoration:none; }
     <div class="hero-eyebrow">Undergraduate Program &middot; Summer 2026</div>
     <p class="hero-sub">Immersive week-long experiences in global cities &mdash; earn 1.5 credits while exploring business culture firsthand around the world.</p>
     <div class="hero-pills">
-      <div class="hero-pill">&#9992; 6 Global Destinations</div>
+      <div class="hero-pill">&#9992; 2 Student-Chosen Destinations</div>
       <div class="hero-pill">&#128218; 1.5 Credits Each</div>
       <div class="hero-pill">&#128197; One Week Immersion</div>
       <div class="hero-pill">&#128188; Industry Visits Included</div>
@@ -362,10 +362,10 @@ footer a { color:var(--gold); text-decoration:none; }
 <!-- SEMINARS -->
 <section class="section" id="seminars">
   <div class="container">
-    <div class="section-eyebrow">Summer 2026</div>
-    <div class="section-title">Choose Your Destination</div>
+    <div class="section-eyebrow">Summer 2026 &mdash; Students&rsquo; Top Picks</div>
+    <div class="section-title">This Year&rsquo;s Destinations</div>
     <div class="section-divider"></div>
-    <p style="margin-bottom:38px;color:#444;max-width:600px;line-height:1.7;font-size:0.93rem;">Click <strong>Learn More</strong> on any card to explore seminar details, meet professors, and see what&rsquo;s included. Seats are limited &mdash; max 30 students per seminar.</p>
+    <p style="margin-bottom:38px;color:#444;max-width:600px;line-height:1.7;font-size:0.93rem;">This year, students voted with their registrations &mdash; and the results are in. For Summer 2026, the two most-requested destinations are <strong>Singapore</strong> and <strong>London</strong>. Click <strong>Learn More</strong> on any card to explore seminar details, meet professors, and see what&rsquo;s included. Seats are limited &mdash; max 30 students per seminar.</p>
     <div class="cities-grid">
 
       <div class="city-card">
@@ -383,65 +383,13 @@ footer a { color:var(--gold); text-decoration:none; }
         </div>
       </div>
 
-      <div class="city-card">
-        <div class="city-card-header theme-plum">
-          <div class="card-blob"></div>
-          <div class="city-label">Asia &middot; Campus-Based</div>
-          <div class="city-name">Singapore</div>
-          <div class="city-topic">Creative Marketing in a Fractured World</div>
-          <div class="city-date">&#128197; May 4&ndash;8, 2026</div>
-          <div class="card-deadline">⏰ Reg. closes March 30</div>
-        </div>
-        <div class="card-footer">
-          <div class="card-fee">$500 USD</div>
-          <button class="learn-btn" onclick="openModal('sg2')">Learn More &#8594;</button>
-        </div>
-      </div>
 
-      <div class="city-card">
-        <div class="city-card-header theme-amber">
-          <div class="card-blob"></div>
-          <div class="city-label">EMEA</div>
-          <div class="city-name">Dubai</div>
-          <div class="city-topic">Luxury, Culture &amp; Influence</div>
-          <div class="city-date">&#128197; May 4&ndash;8, 2026</div>
-          <div class="card-deadline">⏰ Reg. closes March 23</div>
-        </div>
-        <div class="card-footer">
-          <div class="card-fee">$350 USD</div>
-          <button class="learn-btn" onclick="openModal('dubai')">Learn More &#8594;</button>
-        </div>
-      </div>
 
-      <div class="city-card">
-        <div class="city-card-header theme-navy">
-          <div class="card-blob"></div>
-          <div class="city-label">USA &middot; Campus-Based</div>
-          <div class="city-name">Boston</div>
-          <div class="city-topic">Investment Analytics: Immersive Trading &amp; AI</div>
-          <div class="city-date">&#128197; June 22&ndash;26, 2026</div>
-          <div class="card-deadline">⏰ Reg. closes May 11</div>
-        </div>
-        <div class="card-footer">
-          <div class="card-fee">$350 USD</div>
-          <button class="learn-btn" onclick="openModal('boston')">Learn More &#8594;</button>
-        </div>
-      </div>
 
-      <div class="city-card">
-        <div class="city-card-header theme-red">
-          <div class="card-blob"></div>
-          <div class="city-label">USA &middot; Campus-Based</div>
-          <div class="city-name">San Francisco</div>
-          <div class="city-topic">Innovation &amp; Entrepreneurship &mdash; Silicon Valley</div>
-          <div class="city-date">&#128197; June 22&ndash;26, 2026</div>
-          <div class="card-deadline">⏰ Reg. closes May 11</div>
-        </div>
-        <div class="card-footer">
-          <div class="card-fee">$500 USD</div>
-          <button class="learn-btn" onclick="openModal('sf')">Learn More &#8594;</button>
-        </div>
-      </div>
+
+
+
+
 
       <div class="city-card">
         <div class="city-card-header theme-green">
@@ -550,35 +498,30 @@ footer a { color:var(--gold); text-decoration:none; }
       <div class="qblob1"></div>
       <div class="qblob2"></div>
       <div class="quiz-title">Find Your Perfect City &#128506;</div>
-      <p class="quiz-sub">Answer 4 questions and we&rsquo;ll match you to your ideal seminar.</p>
+      <p class="quiz-sub">Answer 3 questions and we&rsquo;ll match you to your ideal seminar.</p>
       <div class="q-progress">
         <div class="pdot" id="d0"></div>
         <div class="pdot" id="d1"></div>
         <div class="pdot" id="d2"></div>
-        <div class="pdot" id="d3"></div>
       </div>
 
       <!-- Q1 -->
       <div class="quiz-step active" id="q0">
-        <div class="quiz-q">1 of 4 &nbsp;&middot;&nbsp; What excites you most about business?</div>
+        <div class="quiz-q">1 of 3 &nbsp;&middot;&nbsp; What excites you most about business?</div>
         <div class="quiz-opts">
-          <button class="quiz-opt" onclick="pick(this,0,'finance')"><span class="opt-icon">&#128202;</span>Finance, investments &amp; data-driven decisions</button>
-          <button class="quiz-opt" onclick="pick(this,0,'startup')"><span class="opt-icon">&#128640;</span>Startups, innovation &amp; entrepreneurship</button>
           <button class="quiz-opt" onclick="pick(this,0,'global')"><span class="opt-icon">&#127758;</span>Global markets &amp; cross-cultural commerce</button>
-          <button class="quiz-opt" onclick="pick(this,0,'marketing')"><span class="opt-icon">&#127912;</span>Branding, marketing &amp; consumer behaviour</button>
           <button class="quiz-opt" onclick="pick(this,0,'realestate')"><span class="opt-icon">&#127959;</span>Real estate, development &amp; urban investment</button>
+          <button class="quiz-opt" onclick="pick(this,0,'marketing')"><span class="opt-icon">&#127912;</span>Branding, marketing &amp; consumer behaviour</button>
         </div>
         <div class="quiz-nav"><button class="qbtn" id="n0" onclick="goNext(1)" disabled>Next &#8594;</button></div>
       </div>
 
       <!-- Q2 -->
       <div class="quiz-step" id="q1">
-        <div class="quiz-q">2 of 4 &nbsp;&middot;&nbsp; Which region fascinates you most?</div>
+        <div class="quiz-q">2 of 3 &nbsp;&middot;&nbsp; Which region fascinates you most?</div>
         <div class="quiz-opts">
           <button class="quiz-opt" onclick="pick(this,1,'asia')"><span class="opt-icon">&#127800;</span>Asia &mdash; fast-growing markets, tech hubs &amp; rich culture</button>
-          <button class="quiz-opt" onclick="pick(this,1,'usa')"><span class="opt-icon">&#127482;&#127480;</span>USA &mdash; world&rsquo;s leading innovation ecosystem</button>
           <button class="quiz-opt" onclick="pick(this,1,'europe')"><span class="opt-icon">&#127984;</span>Europe &mdash; heritage, finance &amp; creative industries</button>
-          <button class="quiz-opt" onclick="pick(this,1,'me')"><span class="opt-icon">&#127769;</span>Middle East &mdash; luxury, ambition &amp; rapid transformation</button>
         </div>
         <div class="quiz-nav">
           <button class="qbtn sec" onclick="goBack(0)">&#8592; Back</button>
@@ -588,30 +531,15 @@ footer a { color:var(--gold); text-decoration:none; }
 
       <!-- Q3 -->
       <div class="quiz-step" id="q2">
-        <div class="quiz-q">3 of 4 &nbsp;&middot;&nbsp; What&rsquo;s your ideal learning style?</div>
+        <div class="quiz-q">3 of 3 &nbsp;&middot;&nbsp; What&rsquo;s your ideal learning style?</div>
         <div class="quiz-opts">
-          <button class="quiz-opt" onclick="pick(this,2,'data')"><span class="opt-icon">&#128187;</span>Simulations, data analysis &amp; applied technical tools</button>
           <button class="quiz-opt" onclick="pick(this,2,'visits')"><span class="opt-icon">&#127970;</span>Company visits &amp; industry immersion</button>
           <button class="quiz-opt" onclick="pick(this,2,'creative')"><span class="opt-icon">&#9999;&#65039;</span>Creative projects &amp; strategic brainstorming</button>
           <button class="quiz-opt" onclick="pick(this,2,'network')"><span class="opt-icon">&#129309;</span>Networking with senior leaders &amp; guest speakers</button>
         </div>
         <div class="quiz-nav">
           <button class="qbtn sec" onclick="goBack(1)">&#8592; Back</button>
-          <button class="qbtn" id="n2" onclick="goNext(3)" disabled>Next &#8594;</button>
-        </div>
-      </div>
-
-      <!-- Q4 -->
-      <div class="quiz-step" id="q3">
-        <div class="quiz-q">4 of 4 &nbsp;&middot;&nbsp; When would you prefer to travel?</div>
-        <div class="quiz-opts">
-          <button class="quiz-opt" onclick="pick(this,3,'may')"><span class="opt-icon">&#127807;</span>Early May &mdash; right after the spring term ends</button>
-          <button class="quiz-opt" onclick="pick(this,3,'june')"><span class="opt-icon">&#9728;&#65039;</span>Late June &mdash; I want the full summer first</button>
-          <button class="quiz-opt" onclick="pick(this,3,'either')"><span class="opt-icon">&#129335;</span>Either timing works for me!</button>
-        </div>
-        <div class="quiz-nav">
-          <button class="qbtn sec" onclick="goBack(2)">&#8592; Back</button>
-          <button class="qbtn" id="n3" onclick="showResult()" disabled>See My Match! &#127919;</button>
+          <button class="qbtn" id="n2" onclick="showResult()" disabled>See My Match! &#127919;</button>
         </div>
       </div>
 
@@ -638,7 +566,7 @@ footer a { color:var(--gold); text-decoration:none; }
     <div class="section-title">How to Register</div>
     <div class="section-divider"></div>
     <div class="reg-grid">
-      <div class="reg-step"><div class="step-bg">01</div><div class="step-icon">&#128269;</div><div class="step-title">Choose your seminar</div><div class="step-desc">Browse the 6 destinations above or use the quiz to find your perfect match.</div></div>
+      <div class="reg-step"><div class="step-bg">01</div><div class="step-icon">&#128269;</div><div class="step-title">Choose your seminar</div><div class="step-desc">Browse this year&rsquo;s 2 student-chosen destinations above or use the quiz to find your match.</div></div>
       <div class="reg-step"><div class="step-bg">02</div><div class="step-icon">&#128187;</div><div class="step-title">Register on myHult</div><div class="step-desc">Log in &rarr; Profile &rarr; Course Registration. Seats cap at 30 per seminar &mdash; act fast.</div></div>
       <div class="reg-step"><div class="step-bg">03</div><div class="step-icon">&#128179;</div><div class="step-title">Pay program fee</div><div class="step-desc">You&rsquo;ll be invoiced via myHult. Pay within 7 days of invoice. Fees are non-refundable.</div></div>
       <div class="reg-step"><div class="step-bg">04</div><div class="step-icon">&#128203;</div><div class="step-title">Complete waivers</div><div class="step-desc">Release waiver due 1 week after Drop/Add. Global locations also need a pre-departure logistics form.</div></div>
@@ -647,8 +575,7 @@ footer a { color:var(--gold); text-decoration:none; }
       <div style="font-weight:700;color:var(--navy);margin-bottom:14px;">&#128204; Important Reminders</div>
       <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px;">
         <div style="font-size:0.82rem;color:#444;display:flex;gap:8px;line-height:1.5;"><span style="color:var(--magenta);font-weight:700;flex-shrink:0;">&rarr;</span>Max 30 / Min 15 students. Register early to claim your seat.</div>
-        <div style="font-size:0.82rem;color:#444;display:flex;gap:8px;line-height:1.5;"><span style="color:var(--magenta);font-weight:700;flex-shrink:0;">&rarr;</span>San Francisco requires a valid F-1/I-20 visa covering Summer 2026.</div>
-        <div style="font-size:0.82rem;color:#444;display:flex;gap:8px;line-height:1.5;"><span style="color:var(--magenta);font-weight:700;flex-shrink:0;">&rarr;</span>Singapore &amp; Dubai require tourist visa only (varies by passport).</div>
+        <div style="font-size:0.82rem;color:#444;display:flex;gap:8px;line-height:1.5;"><span style="color:var(--magenta);font-weight:700;flex-shrink:0;">&rarr;</span>Singapore requires tourist visa only (varies by passport).</div>
         <div style="font-size:0.82rem;color:#444;display:flex;gap:8px;line-height:1.5;"><span style="color:var(--magenta);font-weight:700;flex-shrink:0;">&rarr;</span>You are responsible for flights, accommodation &amp; personal costs.</div>
         <div style="font-size:0.82rem;color:#444;display:flex;gap:8px;line-height:1.5;"><span style="color:var(--magenta);font-weight:700;flex-shrink:0;">&rarr;</span>Compatible with summer internships &mdash; only 1 week of travel required.</div>
       </div>
@@ -923,32 +850,18 @@ function goBack(n){
 }
 
 var SEM={
-  boston:{city:'Boston',topic:'Investment Analytics: Immersive Trading & AI',desc:'Perfect for finance-minded students who love data and AI. Work with a top-ranked professor and dive into real trading simulations in one of the world\'s great financial cities.'},
-  sf:{city:'San Francisco',topic:'Innovation & Entrepreneurship — Silicon Valley',desc:'Ideal if you dream of building companies. Learn from the founder of The North Face, access Silicon Valley\'s ecosystem, and immerse yourself in the world\'s most iconic startup city.'},
-  sg1:{city:'Singapore',topic:'Doing Business in Asia',desc:'Perfect for globally-minded students. Visit Hyundai, PayPal, Mastercard, and Carousell all in one week — and meet senior executives from Oracle, Airwallex, and Design Prodigy.'},
-  sg2:{city:'Singapore',topic:'Creative Marketing in a Fractured World',desc:'For creatives and marketers. Explore brand strategy and consumer complexity with Lindsay Butcher and Ji Mi Park in one of Asia\'s most vibrant cities.'},
-  dubai:{city:'Dubai',topic:'Luxury, Culture & Influence',desc:'For students drawn to luxury brands and Middle Eastern markets. Work with Marta Walus-Shahin, who brings 12+ years of deep insight across APAC and MENA.'},
-  london:{city:'London',topic:'Real Estate Entrepreneurship',desc:'Ideal if you\'re interested in property, finance, and development. Explore London\'s iconic real estate market with founding partners and venture builders.'}
+  sg1:{city:'Singapore',topic:'Doing Business in Asia',desc:'Perfect for globally-minded students. Visit Hyundai, PayPal, Mastercard, and Carousell all in one week — and meet senior executives from Oracle, Airwallex, and Design Prodigy. One of this year\'s most-requested destinations.'},
+  london:{city:'London',topic:'Real Estate Entrepreneurship',desc:'Ideal if you\'re interested in property, finance, and development. Explore London\'s iconic real estate market with founding partners and venture builders. A student favourite for Summer 2026.'}
 };
 
 function showResult(){
-  document.getElementById('q3').classList.remove('active');
+  document.getElementById('q2').classList.remove('active');
   document.querySelectorAll('.pdot').forEach(function(d){d.classList.add('done');});
-  var a0=ans[0],a1=ans[1],a2=ans[2],a3=ans[3];
+  var a0=ans[0],a1=ans[1],a2=ans[2];
   var m='sg1';
-  if(a0==='finance') m='boston';
-  else if(a0==='startup') m='sf';
+  if(a1==='europe') m='london';
   else if(a0==='realestate') m='london';
-  else if(a0==='marketing'){
-    if(a1==='me') m='dubai';
-    else if(a2==='creative') m='sg2';
-    else m='sg2';
-  } else if(a0==='global'){
-    if(a1==='me') m='dubai';
-    else if(a1==='europe') m='london';
-    else if(a1==='usa'){ m=(a3==='may')?'boston':'sf'; }
-    else { m=(a2==='data'||a2==='visits')?'sg1':'sg2'; }
-  }
+  else m='sg1';
   var s=SEM[m];
   document.getElementById('rCity').textContent=s.city;
   document.getElementById('rTopic').textContent=s.topic;
@@ -960,7 +873,7 @@ function showResult(){
 function resetQuiz(){
   ans={};
   document.querySelectorAll('.quiz-opt').forEach(function(b){b.classList.remove('sel');});
-  ['n0','n1','n2','n3'].forEach(function(id){ var el=document.getElementById(id); if(el) el.disabled=true; });
+  ['n0','n1','n2'].forEach(function(id){ var el=document.getElementById(id); if(el) el.disabled=true; });
   document.querySelectorAll('.pdot').forEach(function(d){d.classList.remove('done');});
   document.getElementById('quizResult').classList.remove('show');
   document.querySelectorAll('.quiz-step').forEach(function(s){s.classList.remove('active');});
